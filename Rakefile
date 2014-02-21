@@ -2,9 +2,9 @@ require 'rspec/core/rake_task'
 require 'rake/clean'
 RSpec::Core::RakeTask.new('spec')
 
-VER  = '0.2.3'
-PROG = 'title_case'
-NAME = 'titlecase'
+VER  = '0.0.0'
+PROG = 'rubygemwatch'
+NAME = 'rubygemwatch'
 LIB  = FileList['lib/*.rb']
 BIN  = FileList['bin/*.rb']
 TEST = FileList['spec/*.rb']
@@ -41,8 +41,8 @@ task :install_gem => GEM do
 end
 
 task :install_man => MAN do
-  #mkdir_p MANDIR
-  #cp MAN, MANDIR
+  mkdir_p MANDIR
+  cp MAN, MANDIR
 end
 
 task :push => :gem do
@@ -51,5 +51,5 @@ end
 
 task :uninstall do
   `gem uninstall #{PROG}`     #FIXME shell out not cool
-  #File.delete MANDEST
+  File.delete MANDEST
 end
