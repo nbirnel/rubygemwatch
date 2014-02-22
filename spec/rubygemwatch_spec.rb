@@ -9,11 +9,16 @@ describe RemoteGem do
     @gem.basic.is_a?(Hash).should be_true
   end
 
+  it "should get the name" do
+    @gem.name.should eq "title_case"
+  end
+
   it "should get the versions" do
     @gem.versions.is_a?(Array).should be_true
   end
 
-  it "should get the name" do
-    @gem.name.should eq "title_case"
+  it "should get version numbers" do
+   pending 
   end
+
 end
