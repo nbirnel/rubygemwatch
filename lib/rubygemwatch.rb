@@ -3,22 +3,15 @@ require 'open-uri'
 require 'json'
 
 class RemoteGem
+  attr_reader :versions, :basic
   def initialize gem
     @gem = gem
     @versions = JSON.parse open("https://rubygems.org/api/v1/versions/#{@gem}.json").read
     @basic = JSON.parse open("https://rubygems.org/api/v1/gems/#{@gem}.json").read
   end
 
-  def basic 
-    @basic
-  end
-
   def name
     self.basic["name"]
-  end
-
-  def versions
-    @versions
   end
 
   def version_numbers
