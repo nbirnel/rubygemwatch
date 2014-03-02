@@ -18,7 +18,17 @@ class RemoteGem
     @versions.map{|ver| ver["number"]}
   end
 
-  def version_downloads
+  def downloads
     @versions.map{|ver| ver["downloads_count"]}
   end
+
+  def version_downloads
+    h = Hash.new
+    @versions.each do |ver| 
+      h[ver["number"]] = ver["downloads_count"]
+    end
+    h
+  end
+
+
 end

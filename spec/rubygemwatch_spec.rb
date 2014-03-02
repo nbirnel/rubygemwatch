@@ -17,12 +17,7 @@ describe RemoteGem do
     @gem.versions.is_a?(Array).should be_true
   end
 
-  it "should get version numbers" do
-   @gem.version_numbers.is_a?(Array).should be_true
+  it "should get a hash of version downloads" do
+    @gem.version_downloads.is_a?(Hash).should be_true
   end
-
-  it "should get version downloads" do
-   @gem.version_downloads.is_a?(Array).should be_true
-  end
-
 end
