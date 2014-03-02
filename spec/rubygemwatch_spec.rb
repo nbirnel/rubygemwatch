@@ -18,7 +18,11 @@ describe RemoteGem do
   end
 
   it "should get version numbers" do
-   pending 
+   @gem.version_numbers.is_a?(Array).should be_true
+  end
+
+  it "should get version downloads" do
+   @gem.version_downloads.is_a?(Array).should be_true
   end
 
 end
