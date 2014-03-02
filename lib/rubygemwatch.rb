@@ -19,6 +19,6 @@ class RemoteGem
   end
 
   def version_downloads
-    @versions.map{|ver| ver["download"]}
+    @versions.map{|ver| ver["downloads_count"]}
   end
 end
