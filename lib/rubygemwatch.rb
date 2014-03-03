@@ -18,6 +18,10 @@ class GemCurrentStats
     end
     h
   end
+
+  def json
+    JSON.pretty_generate self.version_downloads
+  end
 end
 
 class GemStats
