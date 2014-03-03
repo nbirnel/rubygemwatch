@@ -13,3 +13,22 @@ describe GemCurrentStats do
     @gem.version_downloads.is_a?(Hash).should be_true
   end
 end
+
+describe GemStats do
+  before do
+    # remove any of the 'should be new'
+    # create the 'should be old'
+  end
+
+  it "should write a new file if needed" do
+    pending
+  end
+
+  it "should append to a file if needed" do
+    pending
+  end
+
+  it "should write a new file if needed" do
+    pending
+  end
+end

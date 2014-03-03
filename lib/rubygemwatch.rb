@@ -1,6 +1,7 @@
 #require 'net/http'
 require 'open-uri'
 require 'json'
+STORAGE_FORMAT = 'json'
 
 class GemCurrentStats
   attr_reader :versions
@@ -11,7 +12,7 @@ class GemCurrentStats
   end
 
   def version_downloads
-    h = { :time => @now, :downloads => dl = Hash.new }
+    h = { :time => @now, :downloads => dl = Hash.new(0) }
     @versions.each do |ver| 
       dl[ver["number"]] = ver["downloads_count"]
     end
@@ -20,4 +21,12 @@ class GemCurrentStats
 end
 
 class GemStats
+  def initialize gem
+    @gem = gem
+    @stored = "#{@gem}.#{STORAGE_FORMAT}"
+    write_file if Dir[@stored].length = 0 
+  end
+
+  def write_file
+  end
 end
